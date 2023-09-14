@@ -178,5 +178,10 @@
 
 
 </body>
-
+<script>
+  // Redirect all 404 errors to index.html
+  if (window.location.pathname === '/404.html') {
+    window.location.replace('/index.html');
+  }
+</script>
 </html>
