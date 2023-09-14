@@ -1,1 +1,0 @@
-  Rose Production DEMO PC
