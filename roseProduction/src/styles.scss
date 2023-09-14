@@ -1,0 +1,298 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$roseProduction-primary: mat.define-palette(mat.$indigo-palette);
+$roseProduction-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$roseProduction-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$roseProduction-theme: mat.define-light-theme((
+  color: (
+    primary: $roseProduction-primary,
+    accent: $roseProduction-accent,
+    warn: $roseProduction-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($roseProduction-theme);
+
+body {
+    
+    margin: 0px;
+    font-family: "SoDo Sans SemiBold", Helvetica Neue, Helvetica, Arial,
+        sans-serif;
+}
+
+.navbar-container {
+    box-shadow: 0px 4px 5px 0px #937DB7;
+    -webkit-box-shadow: 0px 4px 5px 0px #7A5FBA;
+    -moz-box-shadow: 0px 4px 5px 0px #6142BD;
+}
+
+.navbar {
+    max-width: 1560px;
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.navbar-left svg {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.navbar-left div {
+    font-size: 24px; /* Imposta la dimensione del testo a 24 pixel */
+}
+
+.navbar-left div {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navbar-left div:hover,
+.find-a-store:hover {
+    color: #00754a;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left>*,
+.navbar-right>* {
+    margin: 10px;
+}
+
+.find-a-store {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.sign-in,
+.join-now {
+    font-weight: 500;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 5px 20px 5px 20px;
+}
+
+.join-now {
+    background-color: black;
+    color: white;
+}
+
+.join-now:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.sign-in:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.container {
+    max-width: 1440px;
+    margin: auto;
+}
+
+.product img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 100%;
+}
+
+.product {
+    display: flex;
+}
+
+.product-left,
+.product-right {
+    max-width: 50%;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    align-content: stretch;
+    flex-direction: column;
+}
+
+.product-title {
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.product-container {
+    margin: 40px 0px 40px 0px;
+    display: flex;
+}
+
+.product-button {
+    border: 1px solid white;
+    max-width: max-content;
+    padding: 5px 20px 5px 20px;
+    border-radius: 40px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.product-button-white {
+    color: white;
+}
+
+.product-button-black {
+    color: black;
+    border-color: black;
+}
+
+.product-description {
+    text-align: center;
+    padding: 30px 60px 30px 60px;
+    font-size: 18px;
+}
+
+.footer {
+    padding: 50px;
+    text-align: center;
+}
+
+
+////////////////contatti
+$teal:#6142BD;
+$white:#ffffff;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+h2 {
+  font-size:2rem;
+  margin-bottom:1rem;
+}
+.form-container {
+  display:flex;
+}
+
+.left-container {
+  flex:1;
+  height:480px;
+  background-color:$teal;
+}
+.right-container {
+  display:flex;
+  flex:1;
+  height:460px;
+  background-color: $white;
+  justify-content:center;
+  align-items:center;
+}
+
+.left-container {
+  display:flex;
+  flex:1;
+  height:480px;
+  justify-content:center;
+  align-items:center;
+    color:$white;
+}
+
+.left-container p {
+  font-size:0.9rem;
+}
+
+.right-inner-container {
+  width:70%;
+  height:80%;
+  text-align:center;
+}
+
+.left-inner-container {
+  height:50%;
+  width:80%;
+  text-align:center;
+  line-height:22px;
+}
+
+input, textarea {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+  font-size:0.8rem;
+}
+
+input:focus, textarea:focus{
+  outline:1px solid $teal;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #937DB7;
+	background-color: #937DB7;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+  cursor:pointer;
+}
+
+button:hover {
+  opacity:0.7;
+}
+@media only screen and (max-width: 600px) {
+  .left-container{
+    display: none;
+  }
+  .lg-view {
+    display:none;  
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sm-view {
+    display:none;  
+  }
+}
+
+form p {
+  text-align:left;
+}
+
+//////MUSICA
+.fixed-iframe {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Assicura che l'iframe sia sopra a tutto il contenuto */
+    background-color: #fff; /* Personalizza il colore dello sfondo se lo desideri */
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
